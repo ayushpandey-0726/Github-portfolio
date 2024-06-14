@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav id="navbar">
+        <div class="left" id="logo">Ayush Pandey</div>
+        <div class="right" id="list">
+          <ul>
+            <li><a href="/">Home </a></li>
+            <li><a href="/">About</a></li>
+            <li><a href="/">Projects</a></li>
+            <li><a href="/">Contact Me</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="firstSection">
+        <div class="leftSection">
+          Hi, My name is <span class="blue">Ayush</span>
+          <div>and I am a passionate</div>
+          <!-- Element to contain animated typing -->
+          <span id="element"></span>
+        </div>
+        <div class="rightSection">
+          <img src="img/person.png" alt="" />
+        </div>
+      </section>
+      <hr />
+      <section class="secondSection">
+        <h1>My Work Areas</h1>
+        <div class="container">
+          <div id="img1">
+            <img src="img/htmlLogo.png" alt="" />
+            <div class="middle">
+              <div class="text">
+                <h2>Html</h2>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
+                  libero unde vitae tenetur, ex quibusdam ea expedita saepe sed
+                  placeat autem nobis, temporibus nam quo. Corrupti nulla fugit
+                  amet id?
+                </p>
+              </div>
+            </div>
+          </div>
+          <div id="img2"><img src="img/css2.png" alt="" /></div>
+          <div id="img3"><img src="img/JSLogo.png" alt="" /></div>
+          <div>
+            <img src="img/react.png" alt="" id="img4" style="margin: 2rem" />
+          </div>
+        </div>
+        <div class="mode"><button onclick="myFunction">Mode</button></div>
+      </section>
+    </main>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <!-- Setup and start animation! -->
+    <script>
+      let typed = new Typed("#element", {
+        strings: ["Web Developer ", "UI/UX Designer", "Web Designer"],
+        typeSpeed: 50,
+      });
+      /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
+      let prevScrollpos = window.pageYOffset;
+      window.onscroll = function () {
+        let currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+          document.getElementById("navbar").style.top = "0";
+        } else {
+          document.getElementById("navbar").style.top = "-100px";
+        }
+        prevScrollpos = currentScrollPos;
+      };
+
+      function myFunction() {
+        var element = document.body;
+        element.classList.toggle("light-mode");
+      }
+    </script>
+  </body>
+</html>
