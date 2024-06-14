@@ -13,23 +13,18 @@
 </head>
 <body>
 
-
-<!-- navbar starts -->
-<header>
-        <a href="" class="logo"><i class=""></i>Ayush Pandey</a>
-
-        <div id="menu" class="fa fa-bars"></div>
-        <nav class="navbar">
-            <ul>
-            <li><a class="active" href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-</header>
-<!-- navbar ends -->
-
+  <header>
+    <a href="#" class="logo"><i class=""></i>Ayush Pandey</a>
+    <div id="menu" class="fa fa-bars"></div>
+    <nav class="navbar">
+      <ul>
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
 <section class="home" id="home">
 
@@ -95,8 +90,41 @@
 
 <!-- skills section starts -->
 <section class="skills" id="skills">
+  <h2 class="heading"><i class="fa fa-laptop-code"></i> Skills & <span>Abilities</span></h2>
+  <div class="card-container">
+      <div class="card">
+          <div class="first-content" style="background-image: url('images/htmlLogo.png');">
+              <span></span>
+          </div>
+          <div class="second-content">
+              <span>Html</span>
+          </div>
+      </div>
+      <div class="card">
+          <div class="first-content" style="background-image: url('images/css2.png');">
+              <span></span>
+          </div>
+          <div class="second-content">
+              <span>CSS</span>
+          </div>
+      </div>
+      <div class="card">
+          <div class="first-content" style="background-image: url('images/JSLogo.png');">
+              <span></span>
+          </div>
+          <div class="second-content">
+              <span>JavaScript</span>
+          </div>
+      </div>
+  </div>
+</section>
 
-    <h2 class="heading"><i class="fa fa-laptop-code"></i> Skills & <span>Abilities</span></h2>
+
+    
+    
+    
+    
+    
 
     
 </section>
@@ -215,6 +243,31 @@ window.onscroll = () => {
     }
   });
 };
+</script>
+<script>document.addEventListener('DOMContentLoaded', function() {
+  const sections = document.querySelectorAll('.section');
+  const navbarLinks = document.querySelectorAll('.navbar a');
+
+  window.addEventListener('scroll', function() {
+    let current = '';
+    
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+      if (pageYOffset >= sectionTop - sectionHeight / 3) {
+        current = section.getAttribute('id');
+      }
+    });
+
+    navbarLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${current}`) {
+        link.classList.add('active');
+      }
+    });
+  });
+});
+
 </script>
 </body>
 </html>
