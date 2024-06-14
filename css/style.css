@@ -458,7 +458,7 @@ header .navbar ul li a:hover {
 /* skills section starts */
 .skills {
   min-height: 90vh;
-  background: linear-gradient(to bottom, #57059e, #4a00e0);
+  background: linear-gradient(to bottom, #2506ad, #68e2fd);
 }
 .skills h2 {
   color: #fff;
