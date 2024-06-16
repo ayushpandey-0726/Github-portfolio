@@ -13,10 +13,10 @@
 </head>
 <body>
 
-  <header>
+  <header id="header">
     <a href="#" class="logo"><i class=""></i>Ayush Pandey</a>
     <div id="menu" class="fa fa-bars"></div>
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
       <ul>
         <li><a class="active" href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -408,5 +408,19 @@ update = function() {
 requestAnimationFrame(update);
 
   </script>
+ 
+     <script>
+      /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
+      let prevScrollpos = window.pageYOffset;
+      window.onscroll = function () {
+        let currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+          document.getElementById("header").style.top = "0";
+        } else {
+          document.getElementById("header").style.top = "-100px";
+        }
+        prevScrollpos = currentScrollPos;
+      };
+    </script>
 </body>
 </html>
